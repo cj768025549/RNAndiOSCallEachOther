@@ -19,6 +19,8 @@
 
 
 #import <React/RCTEventDispatcher.h>
+#import <BlocksKit/UIView+BlocksKit.h>
+
 
 @interface RNCalliOSAction ()
 
@@ -106,6 +108,7 @@ RCT_EXPORT_METHOD(calliOSActionWithActionSheet) {
 
 
 RCT_EXPORT_METHOD(requestDataWithParams:(NSDictionary *)param) {
+  [SVProgressHUD show];
 
   AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
   sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -133,7 +136,6 @@ RCT_EXPORT_METHOD(requestDataWithParams:(NSDictionary *)param) {
   NSString *language = [languageArray objectAtIndex:0];
   [baseParams setValue:language forKey:@"languageCode"];
   
-  [SVProgressHUD show];
   [sessionManager GET:url parameters:baseParams progress:^(NSProgress * _Nonnull downloadProgress) {
     
   } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -143,6 +145,16 @@ RCT_EXPORT_METHOD(requestDataWithParams:(NSDictionary *)param) {
       
       UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:[jsonDict objectForKey:@"versionContent"] preferredStyle:UIAlertControllerStyleAlert];
       UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        UILabel *nativeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 50, [UIScreen mainScreen].bounds.size.width, 50)];
+        nativeLabel.textAlignment = NSTextAlignmentCenter;
+        nativeLabel.textColor = [UIColor blackColor];
+        nativeLabel.text = @"我是native label";
+        nativeLabel.userInteractionEnabled = YES;
+        [nativeLabel bk_whenTapped:^{
+          [self.bridge.eventDispatcher sendAppEventWithName:@"sendParam" body:@{@"param":@"我是从native传递来的参数"}];
+        }];
+        [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:nativeLabel];
         
       }];
       [alert addAction:action];

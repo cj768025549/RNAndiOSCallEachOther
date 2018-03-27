@@ -28,26 +28,27 @@ export default class RNAndiOSCallEachOther extends Component {
             callBackData:'',
             PromisesData:'',
             selectDate:'',
+            nativeParam:'',
         }
+
+
 
         this.PromisesCallBack = this.PromisesCallBack.bind(this);
     }
 
     componentDidMount (){
-        this.listener=NativeAppEventEmitter.addListener('getSelectDate',(data)=>{
+        this.listener = NativeAppEventEmitter.addListener('getSelectDate',(data)=>{
 
             this.setState({
                 selectDate:data.SelectDate,
             })
         })
 
-        this.listener=NativeAppEventEmitter.addListener('getSelectDate',(data)=>{
-
+        this.listener = NativeAppEventEmitter.addListener('sendParam',(data)=>{
             this.setState({
-                selectDate:data.SelectDate,
+                nativeParam:data.param,
             })
         })
-
     }
     componentWillUnmount(){
         this.listener.remove();
@@ -171,7 +172,25 @@ export default class RNAndiOSCallEachOther extends Component {
           }}>
               <Text>点击调用iOS原生方法,发出网络请求</Text>
           </TouchableOpacity>
+          <TouchableOpacity style={{height:60,marginTop:30}}
+                            onPress={()=>{
+                                //此处的(string,array)参数列表要和回调时传的参数列表要一致。位置一样才可以获取正确的数据
+                                RNCalliOSAction.sendParam((data)=>{
 
+                                    this.setState({
+                                        callBackData:data,
+                                    })
+
+                                });
+                            }}>
+              <Text>点击调用iOS原生方法,并得到回调</Text>
+              <Text>回调结果callBack：{this.state.callBackData}</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={{height:30}}>
+
+          <Text>native传来的参数：{this.state.nativeParam}</Text>
+          </TouchableOpacity>
       </View>
     );
   }
