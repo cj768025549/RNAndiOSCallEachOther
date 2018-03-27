@@ -23,11 +23,6 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		1F84181F1EBB3F1C00887516 /* RNCalliOSAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F84181E1EBB3F1C00887516 /* RNCalliOSAction.m */; };
-		1F8418441EBC151C00887516 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F84183B1EBC151C00887516 /* SVIndefiniteAnimatedView.m */; };
-		1F8418451EBC151C00887516 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F84183D1EBC151C00887516 /* SVProgressAnimatedView.m */; };
-		1F8418461EBC151C00887516 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F84183F1EBC151C00887516 /* SVProgressHUD.bundle */; };
-		1F8418471EBC151C00887516 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8418411EBC151C00887516 /* SVProgressHUD.m */; };
-		1F8418481EBC151C00887516 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8418431EBC151C00887516 /* SVRadialGradientLayer.m */; };
 		1F84184B1EBC5E1B00887516 /* RCSubEventEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F84184A1EBC5E1B00887516 /* RCSubEventEmitter.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -43,6 +38,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* RNAndiOSCallEachOtherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNAndiOSCallEachOtherTests.m */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		AFD6B36DDE35407DEAE26255 /* Pods__RNAndiOSCallEachOther.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308F702C526EC1CC8624EFB0 /* Pods__RNAndiOSCallEachOther.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -259,23 +255,16 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1F84181D1EBB3F1C00887516 /* RNCalliOSAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCalliOSAction.h; sourceTree = "<group>"; };
 		1F84181E1EBB3F1C00887516 /* RNCalliOSAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCalliOSAction.m; sourceTree = "<group>"; };
-		1F84183A1EBC151C00887516 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		1F84183B1EBC151C00887516 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		1F84183C1EBC151C00887516 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
-		1F84183D1EBC151C00887516 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
-		1F84183E1EBC151C00887516 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
-		1F84183F1EBC151C00887516 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		1F8418401EBC151C00887516 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		1F8418411EBC151C00887516 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		1F8418421EBC151C00887516 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
-		1F8418431EBC151C00887516 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		1F8418491EBC5E1B00887516 /* RCSubEventEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCSubEventEmitter.h; sourceTree = "<group>"; };
 		1F84184A1EBC5E1B00887516 /* RCSubEventEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCSubEventEmitter.m; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* RNAndiOSCallEachOther-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RNAndiOSCallEachOther-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* RNAndiOSCallEachOther-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RNAndiOSCallEachOther-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		308F702C526EC1CC8624EFB0 /* Pods__RNAndiOSCallEachOther.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods__RNAndiOSCallEachOther.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		467790316178A1D9A958EEEC /* Pods--RNAndiOSCallEachOther.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods--RNAndiOSCallEachOther.debug.xcconfig"; path = "Pods/Target Support Files/Pods--RNAndiOSCallEachOther/Pods--RNAndiOSCallEachOther.debug.xcconfig"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		9E153D9233C68F77D128A923 /* Pods--RNAndiOSCallEachOther.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods--RNAndiOSCallEachOther.release.xcconfig"; path = "Pods/Target Support Files/Pods--RNAndiOSCallEachOther/Pods--RNAndiOSCallEachOther.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +291,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				AFD6B36DDE35407DEAE26255 /* Pods__RNAndiOSCallEachOther.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,23 +430,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1F8418391EBC151C00887516 /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				1F84183A1EBC151C00887516 /* SVIndefiniteAnimatedView.h */,
-				1F84183B1EBC151C00887516 /* SVIndefiniteAnimatedView.m */,
-				1F84183C1EBC151C00887516 /* SVProgressAnimatedView.h */,
-				1F84183D1EBC151C00887516 /* SVProgressAnimatedView.m */,
-				1F84183E1EBC151C00887516 /* SVProgressHUD-Prefix.pch */,
-				1F84183F1EBC151C00887516 /* SVProgressHUD.bundle */,
-				1F8418401EBC151C00887516 /* SVProgressHUD.h */,
-				1F8418411EBC151C00887516 /* SVProgressHUD.m */,
-				1F8418421EBC151C00887516 /* SVRadialGradientLayer.h */,
-				1F8418431EBC151C00887516 /* SVRadialGradientLayer.m */,
-			);
-			path = SVProgressHUD;
-			sourceTree = "<group>";
-		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +437,15 @@
 				5E9157351DD0AC6500FF2AA8 /* libRCTAnimation.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		72B0BBA873D28820951A1DA0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				467790316178A1D9A958EEEC /* Pods--RNAndiOSCallEachOther.debug.xcconfig */,
+				9E153D9233C68F77D128A923 /* Pods--RNAndiOSCallEachOther.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
@@ -505,11 +487,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				1F8418391EBC151C00887516 /* SVProgressHUD */,
 				13B07FAE1A68108700A75B9A /* RNAndiOSCallEachOther */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* RNAndiOSCallEachOtherTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				72B0BBA873D28820951A1DA0 /* Pods */,
+				9714A6A79AF8B4D9091E57AD /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -524,6 +507,14 @@
 				2D02E4901E0B4A5D006451C7 /* RNAndiOSCallEachOther-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9714A6A79AF8B4D9091E57AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				308F702C526EC1CC8624EFB0 /* Pods__RNAndiOSCallEachOther.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -551,10 +542,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RNAndiOSCallEachOther" */;
 			buildPhases = (
+				DD7F1F261B7E49B226D91436 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				83B21A9CF316342671121C4E /* [CP] Embed Pods Frameworks */,
+				56CD021E91C16FC61374F682 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -883,7 +877,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				1F8418461EBC151C00887516 /* SVProgressHUD.bundle in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -934,6 +927,73 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
+		56CD021E91C16FC61374F682 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods--RNAndiOSCallEachOther/Pods--RNAndiOSCallEachOther-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83B21A9CF316342671121C4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods--RNAndiOSCallEachOther/Pods--RNAndiOSCallEachOther-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLEX.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods--RNAndiOSCallEachOther/Pods--RNAndiOSCallEachOther-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD7F1F261B7E49B226D91436 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods--RNAndiOSCallEachOther-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -949,14 +1009,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F8418481EBC151C00887516 /* SVRadialGradientLayer.m in Sources */,
 				1F84184B1EBC5E1B00887516 /* RCSubEventEmitter.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				1F8418451EBC151C00887516 /* SVProgressAnimatedView.m in Sources */,
 				1F84181F1EBB3F1C00887516 /* RNCalliOSAction.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				1F8418441EBC151C00887516 /* SVIndefiniteAnimatedView.m in Sources */,
-				1F8418471EBC151C00887516 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,6 +1100,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 467790316178A1D9A958EEEC /* Pods--RNAndiOSCallEachOther.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1062,6 +1119,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E153D9233C68F77D128A923 /* Pods--RNAndiOSCallEachOther.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;

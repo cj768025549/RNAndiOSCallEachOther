@@ -10,7 +10,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "SVProgressHUD.h"
+//#import "SVProgressHUD.h"
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <AFNetworking/AFNetworking.h>
+#import <Foundation/NSJSONSerialization.h>
 
 //#import "RCSubEventEmitter.h"
 
@@ -102,7 +105,58 @@ RCT_EXPORT_METHOD(calliOSActionWithActionSheet) {
 
 
 
+RCT_EXPORT_METHOD(requestDataWithParams:(NSDictionary *)param) {
 
+  AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
+  sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+  sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", nil];
+  AFHTTPRequestSerializer *requestSerializer = [AFHTTPRequestSerializer serializer];
+  requestSerializer.cachePolicy = NSURLRequestReloadIgnoringLocalAndRemoteCacheData;
+
+  NSString *url = @"https://test.nexttrucking.com/api/app/v2/carrier/appLastVersion";
+  
+  NSMutableDictionary *baseParams = [NSMutableDictionary dictionary];
+//  [baseParams setValue:@"IOS" forKey:@"osName"];
+  [baseParams setValue:[UIDevice currentDevice].systemVersion forKey:@"osVersion"];
+  [baseParams setValue:[UIDevice currentDevice].model forKey:@"deviceModel"];
+  [baseParams setValue:[UIDevice currentDevice].localizedModel forKey:@"manufacturer"];
+  [baseParams setValue:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] forKey:@"versionName"];
+//  [baseParams setValue:@"Mobile" forKey:@"nextDeviceType"];
+//  [baseParams setValue:@"1" forKey:@"versionCode"];
+  [param enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+    if (obj) {
+      [baseParams setObject:obj forKey:key];
+    }
+  }];
+  
+  NSArray *languageArray = [NSLocale preferredLanguages];
+  NSString *language = [languageArray objectAtIndex:0];
+  [baseParams setValue:language forKey:@"languageCode"];
+  
+  [SVProgressHUD show];
+  [sessionManager GET:url parameters:baseParams progress:^(NSProgress * _Nonnull downloadProgress) {
+    
+  } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+      [SVProgressHUD dismiss];
+      NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableLeaves error:nil];
+      
+      UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:[jsonDict objectForKey:@"versionContent"] preferredStyle:UIAlertControllerStyleAlert];
+      UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+      }];
+      [alert addAction:action];
+      [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:^{
+        
+      }];
+    });
+    
+    
+  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+     [SVProgressHUD dismiss];
+  }];
+  
+}
 
 /**************************************** RN Call iOS 回调 ***************************************************/
 
@@ -270,6 +324,7 @@ RCT_EXPORT_METHOD(RNCalliOSToShowDatePicker) {
   [self.bridge.eventDispatcher sendAppEventWithName:@"getSelectDate" body:@{@"SelectDate":str_date}];
   
 }
+
 - (void)dismissView {
 
   UIDatePicker *picker=(UIDatePicker *)[[UIApplication sharedApplication].keyWindow.rootViewController.view viewWithTag:100];

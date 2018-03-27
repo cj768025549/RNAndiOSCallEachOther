@@ -1,0 +1,6 @@
+framework module Pods__RNAndiOSCallEachOther {
+  umbrella header "Pods--RNAndiOSCallEachOther-umbrella.h"
+
+  export *
+  module * { export * }
+}

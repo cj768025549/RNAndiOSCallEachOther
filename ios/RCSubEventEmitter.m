@@ -18,8 +18,7 @@
 
 -(void)Callback:(NSString*)code result:(NSString*) result {
   
-  
-  
+    
   [self sendEventWithName:@"Callback"
                      body:@{
                             @"code": code,

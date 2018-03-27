@@ -41,6 +41,13 @@ export default class RNAndiOSCallEachOther extends Component {
             })
         })
 
+        this.listener=NativeAppEventEmitter.addListener('getSelectDate',(data)=>{
+
+            this.setState({
+                selectDate:data.SelectDate,
+            })
+        })
+
     }
     componentWillUnmount(){
         this.listener.remove();
@@ -154,6 +161,16 @@ export default class RNAndiOSCallEachOther extends Component {
               <Text>选取的时间：{this.state.selectDate}</Text>
           </TouchableOpacity>
 
+          <TouchableOpacity style={{height:30}}
+                            onPress={()=>{
+              RNCalliOSAction.requestDataWithParams({
+                  osName:'iOS',
+                  versionCode:'1',
+                  nextDeviceType:'Mobile'
+              });
+          }}>
+              <Text>点击调用iOS原生方法,发出网络请求</Text>
+          </TouchableOpacity>
 
       </View>
     );
