@@ -13,11 +13,12 @@ import {
     TouchableOpacity,
     NativeModules,
     NativeAppEventEmitter,//导入
+    AlertIOS,
 } from 'react-native';
 
 //在JavaScript中调用Object-C定义的方法，需要先导入NativeModules,再使用RNCalliOSFuncation
 var RNCalliOSAction = NativeModules.RNCalliOSAction;
-
+var alertMessage = '这是JS直接调用Native方法弹出的alert';
 
 export default class RNAndiOSCallEachOther extends Component {
 
@@ -82,12 +83,12 @@ export default class RNAndiOSCallEachOther extends Component {
     return (
       <View style={styles.container}>
 
-          <TouchableOpacity style={{height:30}}
-                            onPress={()=>{
-                RNCalliOSAction.calliOSActionWithOneParams('hello');
-            }}>
-              <Text>点击调用iOS原生方法,RN向iOS传递一个参数</Text>
-          </TouchableOpacity>
+          {/*<TouchableOpacity style={{height:30}}*/}
+                            {/*onPress={()=>{*/}
+                {/*RNCalliOSAction.calliOSActionWithOneParams('hello');*/}
+            {/*}}>*/}
+              {/*<Text>点击调用iOS原生方法,RN向iOS传递一个参数</Text>*/}
+          {/*</TouchableOpacity>*/}
 
 
           <TouchableOpacity style={{height:30}}
@@ -108,22 +109,37 @@ export default class RNAndiOSCallEachOther extends Component {
               <Text>点击调用iOS原生方法,传递一个json数据</Text>
           </TouchableOpacity>
 
+          {/*<TouchableOpacity style={{height:30}}*/}
+                            {/*onPress={()=>{*/}
+                {/*RNCalliOSAction.calliOSActionWithArrayParams([*/}
+                    {/*'RN',*/}
+                    {/*'call',*/}
+                    {/*'iOS'*/}
+                {/*]);*/}
+            {/*}}>*/}
+              {/*<Text>点击调用iOS原生方法,传递一个数组</Text>*/}
+          {/*</TouchableOpacity>*/}
+
           <TouchableOpacity style={{height:30}}
                             onPress={()=>{
-                RNCalliOSAction.calliOSActionWithArrayParams([
-                    'RN',
-                    'call',
-                    'iOS'
-                ]);
-            }}>
-              <Text>点击调用iOS原生方法,传递一个数组</Text>
+                                AlertIOS.alert(
+                                    'JS Call Alert',
+                                    alertMessage,
+                                    [
+                                        {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
+                                        {text: 'OK', onPress: () => console.log('OK Pressed!')},
+                                    ]
+                                )
+                            }
+                            }>
+              <Text>点击JS直接调用Native控件</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={{height:30}}
                             onPress={()=>{
                 RNCalliOSAction.calliOSActionWithActionSheet();
             }}>
-              <Text>点击调用iOS原生方法,弹出ActionSheet</Text>
+              <Text>点击调用iOS原生方法,弹出ActionAlert</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={{height:60,marginTop:30}}
@@ -145,13 +161,13 @@ export default class RNAndiOSCallEachOther extends Component {
               <Text>回调结果callBack：{this.state.callBackData}</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={{height:60}}
-                            onPress={()=>{
-                                this.PromisesCallBack();
-            }}>
-              <Text>点击调用iOS原生方法,Promises 回调</Text>
-              <Text>回调结果Promises：{this.state.PromisesData}</Text>
-          </TouchableOpacity>
+          {/*<TouchableOpacity style={{height:60}}*/}
+                            {/*onPress={()=>{*/}
+                                {/*this.PromisesCallBack();*/}
+            {/*}}>*/}
+              {/*<Text>点击调用iOS原生方法,Promises 回调</Text>*/}
+              {/*<Text>回调结果Promises：{this.state.PromisesData}</Text>*/}
+          {/*</TouchableOpacity>*/}
 
           <TouchableOpacity style={{height:60}}
                             onPress={()=>{
@@ -172,20 +188,20 @@ export default class RNAndiOSCallEachOther extends Component {
           }}>
               <Text>点击调用iOS原生方法,发出网络请求</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{height:60,marginTop:30}}
-                            onPress={()=>{
-                                //此处的(string,array)参数列表要和回调时传的参数列表要一致。位置一样才可以获取正确的数据
-                                RNCalliOSAction.sendParam((data)=>{
+          {/*<TouchableOpacity style={{height:60,marginTop:30}}*/}
+                            {/*onPress={()=>{*/}
+                                {/*//此处的(string,array)参数列表要和回调时传的参数列表要一致。位置一样才可以获取正确的数据*/}
+                                {/*RNCalliOSAction.sendParam((data)=>{*/}
 
-                                    this.setState({
-                                        callBackData:data,
-                                    })
+                                    {/*this.setState({*/}
+                                        {/*callBackData:data,*/}
+                                    {/*})*/}
 
-                                });
-                            }}>
-              <Text>点击调用iOS原生方法,并得到回调</Text>
-              <Text>回调结果callBack：{this.state.callBackData}</Text>
-          </TouchableOpacity>
+                                {/*});*/}
+                            {/*}}>*/}
+              {/*<Text>点击调用iOS原生方法,并得到回调</Text>*/}
+              {/*<Text>回调结果callBack：{this.state.callBackData}</Text>*/}
+          {/*</TouchableOpacity>*/}
 
           <TouchableOpacity style={{height:30}}>
 

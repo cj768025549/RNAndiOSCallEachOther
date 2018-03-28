@@ -9,29 +9,33 @@
 
 #import "AppDelegate.h"
 
-#import <React/RCTBundleURLProvider.h>
-#import <React/RCTRootView.h>
 #import <FLEX/FLEX.h>
+#import "RNCalliOSTestViewController.h"
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  NSURL *jsCodeLocation;
-
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
-
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                      moduleName:@"RNAndiOSCallEachOther"
-                                               initialProperties:nil
-                                                   launchOptions:launchOptions];
-  rootView.backgroundColor = [UIColor whiteColor];
+//  NSURL *jsCodeLocation;
+//
+//  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+//
+//  RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
+//                                                      moduleName:@"RNAndiOSCallEachOther"
+//                                               initialProperties:nil
+//                                                   launchOptions:launchOptions];
+//  rootView.backgroundColor = [UIColor whiteColor];
+  
+  self.testVC = [[RNCalliOSTestViewController alloc] init];
+  
+  UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:self.testVC];
+  
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
+//  UIViewController *rootViewController = [UIViewController new];
+//  rootViewController.view = rootView;
+  self.window.rootViewController = nv;
   [self.window makeKeyAndVisible];
   
   [[FLEXManager sharedManager] showExplorer];

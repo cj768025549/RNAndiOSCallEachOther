@@ -8,9 +8,11 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "RNCalliOSTestViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) RNCalliOSTestViewController *testVC;
 
 @end

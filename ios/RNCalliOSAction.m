@@ -2,7 +2,7 @@
 //  RNCalliOSAction.m
 //  RNAndiOSCallEachOther
 //
-//  Created by Mac on 2017/5/4.
+//  Created by changjian on 2017/5/4.
 //  Copyright © 2017年 Facebook. All rights reserved.
 //
 
@@ -20,6 +20,8 @@
 
 #import <React/RCTEventDispatcher.h>
 #import <BlocksKit/UIView+BlocksKit.h>
+
+#import "AppDelegate.h"
 
 
 @interface RNCalliOSAction ()
@@ -89,19 +91,19 @@ RCT_EXPORT_METHOD(calliOSActionWithArrayParams:(NSArray *)array)
 //无参数并弹出iOS原生组件
 RCT_EXPORT_METHOD(calliOSActionWithActionSheet) {
   
-  UIAlertController *sheetView=[UIAlertController alertControllerWithTitle:@"RN Call iOS" message:@"RN调用iOS方法弹出ActionSheet"preferredStyle:(UIAlertControllerStyleActionSheet)];
-
-  UIAlertAction *action1=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+  UIAlertController *sheetView=[UIAlertController alertControllerWithTitle:@"Native Call Alert" message:@"调用iOS方法间接弹出Alert"preferredStyle:(UIAlertControllerStyleAlert)];
+  
+  UIAlertAction *action1=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
     
   }];
   [sheetView addAction:action1];
   
-  UIAlertAction *action2=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+  UIAlertAction *action2=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
     
   }];
   [sheetView addAction:action2];
-
-  [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:sheetView animated:YES completion:nil];
+  
+  [((AppDelegate *)[UIApplication sharedApplication].delegate).testVC presentViewController:sheetView animated:YES completion:nil];
   
 }
 
@@ -152,13 +154,17 @@ RCT_EXPORT_METHOD(requestDataWithParams:(NSDictionary *)param) {
         nativeLabel.text = @"我是native label";
         nativeLabel.userInteractionEnabled = YES;
         [nativeLabel bk_whenTapped:^{
-          [self.bridge.eventDispatcher sendAppEventWithName:@"sendParam" body:@{@"param":@"我是从native传递来的参数"}];
+          [self.bridge.eventDispatcher sendAppEventWithName:@"sendParam" body:@{
+                                                                                @"param":@"我是从native传递来的参数",
+                                                                                @"key1":@"value1"
+                                                                                }];
+          [nativeLabel removeFromSuperview];
         }];
-        [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:nativeLabel];
+        [((AppDelegate *)[UIApplication sharedApplication].delegate).testVC.view addSubview:nativeLabel];
         
       }];
       [alert addAction:action];
-      [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alert animated:YES completion:^{
+      [((AppDelegate *)[UIApplication sharedApplication].delegate).testVC presentViewController:alert animated:YES completion:^{
         
       }];
     });
@@ -291,7 +297,7 @@ RCT_EXPORT_METHOD(RNCalliOSToShowDatePicker) {
     
     [picker addTarget:self action:@selector(dateChane:) forControlEvents:UIControlEventValueChanged];
     
-    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:picker];
+    [((AppDelegate *)[UIApplication sharedApplication].delegate).testVC.view addSubview:picker];
     
     
   
@@ -300,7 +306,7 @@ RCT_EXPORT_METHOD(RNCalliOSToShowDatePicker) {
     UIView *topView=[[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, 44)];
     topView.tag=101;
     topView.backgroundColor=[UIColor lightGrayColor];
-    [[UIApplication sharedApplication].keyWindow.rootViewController.view addSubview:topView];
+    [((AppDelegate *)[UIApplication sharedApplication].delegate).testVC.view addSubview:topView];
 
     
     UIButton *button=[[UIButton alloc]initWithFrame:CGRectMake(topView.frame.size.width-60, 0, 60, 44)];
@@ -339,8 +345,8 @@ RCT_EXPORT_METHOD(RNCalliOSToShowDatePicker) {
 
 - (void)dismissView {
 
-  UIDatePicker *picker=(UIDatePicker *)[[UIApplication sharedApplication].keyWindow.rootViewController.view viewWithTag:100];
-  UIDatePicker *topview=(UIDatePicker *)[[UIApplication sharedApplication].keyWindow.rootViewController.view viewWithTag:101];
+  UIDatePicker *picker=(UIDatePicker *)[((AppDelegate *)[UIApplication sharedApplication].delegate).testVC.view viewWithTag:100];
+  UIDatePicker *topview=(UIDatePicker *)[((AppDelegate *)[UIApplication sharedApplication].delegate).testVC.view viewWithTag:101];
 
   [UIView animateWithDuration:.25 animations:^{
     picker.frame=CGRectMake(0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width, 216);

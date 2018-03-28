@@ -2,7 +2,7 @@
 //  RCSubEventEmitter.h
 //  RNAndiOSCallEachOther
 //
-//  Created by Mac on 2017/5/5.
+//  Created by changjian on 2017/5/5.
 //  Copyright © 2017年 Facebook. All rights reserved.
 //
 

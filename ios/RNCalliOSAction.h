@@ -2,7 +2,7 @@
 //  RNCalliOSAction.h
 //  RNAndiOSCallEachOther
 //
-//  Created by Mac on 2017/5/4.
+//  Created by changjian on 2017/5/4.
 //  Copyright © 2017年 Facebook. All rights reserved.
 //
 

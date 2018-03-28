@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RNCalliOSTestViewController">
+            <connections>
+                <outlet property="pushBtn" destination="Z8U-da-3bm" id="IfH-Zo-Gkf"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8U-da-3bm">
+                    <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="SdD-GO-mmp"/>
+                    </constraints>
+                    <state key="normal" title="push"/>
+                    <connections>
+                        <action selector="clickPushAction:" destination="-1" eventType="touchUpInside" id="Fc1-oI-s9R"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Z8U-da-3bm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="59u-S5-MZ6"/>
+                <constraint firstItem="Z8U-da-3bm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="HL6-VZ-lp9"/>
+                <constraint firstAttribute="trailing" secondItem="Z8U-da-3bm" secondAttribute="trailing" id="Qva-yx-wEJ"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="60.5"/>
+        </view>
+    </objects>
+</document>
